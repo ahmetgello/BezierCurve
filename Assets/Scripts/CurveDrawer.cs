@@ -23,7 +23,7 @@ public class CurveDrawer : MonoBehaviour
     [SerializeField]
     private Transform[] controlPoints;
 
-    private void Start()
+    private void Update()
     {
         DrawLine(value);
     }
