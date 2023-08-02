@@ -5,14 +5,17 @@ using UnityEngine;
 public class CurveFollower : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] controlPoints;
+    private float speed;
 
     [SerializeField]
-    private float speed;
+    private Transform[] controlPoints;
+
+    [SerializeField][Range(0f, 1f)]
+    private float start, end;
 
     private void Start()
     {
-        StartCoroutine(FollowCurve(.3f, .6f));
+        StartCoroutine(FollowCurve(start, end));
     }
 
     IEnumerator FollowCurve(float start, float end)

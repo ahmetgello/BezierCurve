@@ -11,13 +11,19 @@ public class CurvePreview : MonoBehaviour
     private float gizmosDensity = 0.01f;
 
     [SerializeField]
+    private bool active;
+
+    [SerializeField]
     private bool drawLines;
 
     [SerializeField]
     private Transform[] controlPoints;
 
+
     private void OnDrawGizmos()
     {
+        if (!active) return;
+
         for (float t = 0; t < 1; t += gizmosDensity)
         {
             Vector3 gizmosPosition = GetPointOnBezierCurve(controlPoints.Length, t);

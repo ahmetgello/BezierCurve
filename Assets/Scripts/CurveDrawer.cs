@@ -18,7 +18,7 @@ public class CurveDrawer : MonoBehaviour
     private float value;
 
     [SerializeField]
-    private bool drawInEditMode;
+    private bool RunInUpdate;
 
     [SerializeField]
     private Transform[] controlPoints;
@@ -28,10 +28,12 @@ public class CurveDrawer : MonoBehaviour
         DrawLine(value);
     }
 
-    private void OnDrawGizmos()
+    private void Update()
     {
-        if (!drawInEditMode) return;
-        DrawLine(value);
+        if (RunInUpdate)
+        {
+            DrawLine(value);
+        }
     }
 
     void DrawLine(float completeness = 1f)
