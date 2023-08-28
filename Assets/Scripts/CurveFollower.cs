@@ -48,7 +48,7 @@ public class CurveFollower : MonoBehaviour
     /// <param name="n">the number items</param>
     /// <param name="k">the number to choose</param>
     /// <returns>the binomial coefficient</returns>
-    public static long BinomCoefficient(long n, long k)
+    private long BinomCoefficient(long n, long k)
     {
         if (k > n) { return 0; }
         if (n == k) { return 1; } // only one way to chose when n == k
